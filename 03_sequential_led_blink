@@ -1,5 +1,6 @@
-project 3:
-Blinking all the LEDS one at time
+//project 3:
+//Blinking all the LEDS one at time
+
 #include <lpc17xx.h>
 
 int main(){
