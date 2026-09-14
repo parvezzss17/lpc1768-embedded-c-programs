@@ -1,0 +1,15 @@
+project 1:
+Blinking LED p1.22
+#include <lpc17xx.h>
+
+int main(){
+    LPC_GPIO1->FIODIR = (1<<22);
+
+    while(1){
+        int i = 0;
+        LPC_GPIO1->FIOSET = (1<<22);
+        for(i=0; i<500000; i++);
+        LPC_GPIO1->FIOCLR = (1<<22);
+        for(i=0; i<500000; i++);
+    }
+}
