@@ -1,0 +1,30 @@
+//project 5:
+//blinking leds from 19 to 26 and 26 to 19
+#include <lpc17xx.h>
+
+int main(){
+    LPC_GPIO1->FIODIR = (0xff<<19);
+
+    while(1){
+        int i,j;
+		for(j=26; j>=19; j--){
+              LPC_GPIO1->FIOCLR = (0xff<<19);
+		      LPC_GPIO1->FIOSET = (1<<j);
+	
+		      for(i=0; i<50000; i++);
+
+
+
+		}
+		for(j=19; j<=26; j++){
+              LPC_GPIO1->FIOCLR = (0xff<<26);
+		      LPC_GPIO1->FIOSET = (1<<j);
+	
+		      for(i=0; i<50000; i++);
+
+			  LPC_GPIO1->FIOCLR = (0xff<<19);
+			  }
+ 
+    }
+}
+
