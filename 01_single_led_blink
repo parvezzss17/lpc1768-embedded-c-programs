@@ -1,5 +1,5 @@
-project 1:
-Blinking LED p1.22
+//project 1:
+//Blinking LED p1.22
 #include <lpc17xx.h>
 
 int main(){
