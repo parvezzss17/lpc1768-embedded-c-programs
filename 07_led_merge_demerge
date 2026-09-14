@@ -1,0 +1,38 @@
+//project 7:
+//merging and de merging of leds
+
+#include <lpc17xx.h>
+
+void delay (int t){
+    int i,j;
+	for(j=0; j<t; j++){
+	    for (i=0; i<100000; i++);
+	}
+}
+
+int main(){
+   	int i,j;
+	LPC_GPIO1->FIODIR = 0xff << 19;
+	LPC_GPIO1->FIOCLR = 0xff << 19;
+    while(1){
+
+        j=26;
+		for(i = 19; i <= 22; i++){
+		LPC_GPIO1->FIOCLR = (0xff << 19);
+		LPC_GPIO1->FIODIR = (0xff << 19);
+        LPC_GPIO1->FIOSET = (1 << i | 1 << j);
+		delay(1);
+		j--;
+		}
+
+		j=23;
+		for(i = 23; i >= 19; i--){
+		LPC_GPIO1->FIOCLR = (0xff << 19);
+		LPC_GPIO1->FIODIR = (0xff << 19);
+        LPC_GPIO1->FIOSET = (1 << i | 1 << j);
+		delay(1);
+		j++;
+ 
+        }
+   }
+}
