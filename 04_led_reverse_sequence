@@ -1,5 +1,6 @@
-project 4:
-blinking all LEDs from 26 to 19
+//project 4:
+//blinking all LEDs from 26 to 19
+
 #include <lpc17xx.h>
 
 int main(){
